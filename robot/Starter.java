@@ -22,7 +22,7 @@ public class Starter implements Directions{
     rob.move();// move one step in the direction it is facing
 
 
-    // starting the letter V
+    // the letter V
     rob.putBeeper();
     rob.turnLeft();
     rob.move();
