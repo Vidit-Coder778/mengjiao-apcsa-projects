@@ -15,6 +15,7 @@ public class Starter implements Directions{
     // Find out what the numbers and direction do!
     // Put rob in a better location for your initials.
     Robot rob = new Robot(15,2,South,900);
+    World.setDelay(5);
 
     // Want a second robot?  No prob.  They are cheap :)
     //Robot dude = new Robot(7,5,West,9);
@@ -22,7 +23,7 @@ public class Starter implements Directions{
     rob.move();// move one step in the direction it is facing
 
 
-    // the letter V
+    // the Diamond
     rob.putBeeper();
     rob.turnLeft();
     rob.move();
@@ -54,8 +55,81 @@ public class Starter implements Directions{
     rob.putBeeper();
     rob.turnLeft();
     rob.move();
-    
-    
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.move();
+    rob.turnLeft();
+    rob.turnLeft();
+    rob.putBeeper();
+    rob.move();
+    rob.move();
     // done with the line, now on the curve
     // rob.turnLeft();
 
