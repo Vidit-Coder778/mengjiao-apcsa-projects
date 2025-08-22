@@ -6,6 +6,8 @@ public class Starter implements Directions{
 
   public static void main(String[] args) {
 
+
+
     World.setVisible(true);// allows us to see the run output
     // the bigger the street, the farther north
     World.setSize(20,20);
@@ -27,30 +29,22 @@ public class Starter implements Directions{
     rob.putBeeper();
     rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.putBeeper();
      rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.putBeeper();
     rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.putBeeper();
-    rob.turnLeft();
+    rob.turnLeft( );
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.putBeeper();
     rob.turnLeft();
@@ -58,23 +52,17 @@ public class Starter implements Directions{
     rob.turnLeft();
     rob.move();
     rob.putBeeper();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.turnLeft();
     rob.move();
     rob.putBeeper();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.turnLeft();
     rob.move();
     rob.putBeeper();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.move();
     rob.turnLeft();
     rob.move();
@@ -82,30 +70,22 @@ public class Starter implements Directions{
     rob.move();
     rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.putBeeper();
     rob.move();
     rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.putBeeper();
     rob.move();
     rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.putBeeper();
     rob.move();
     rob.turnLeft();
     rob.move();
-    rob.turnLeft();
-    rob.turnLeft();
-    rob.turnLeft();
+    turnRight(rob);
     rob.putBeeper();
     rob.turnLeft();
     rob.move();
@@ -130,8 +110,13 @@ public class Starter implements Directions{
     rob.putBeeper();
     rob.move();
     rob.move();
-    // done with the line, now on the curve
-    // rob.turnLeft();
 
   }
+    public static void turnRight(Robot rob){
+      for (int i = 0; i < 3; i++)
+      rob.turnLeft();
+    }
+  
+
+  
 }
