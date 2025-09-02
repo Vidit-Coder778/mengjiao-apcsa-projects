@@ -4,12 +4,13 @@ import kareltherobot.*;
 
 public class Roomba implements Directions {
 
+      Robot rob = new Robot(10,10,South,900);
 	// Main method to make this self-contained
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
 		String worldName = "robot/basicRoom.wld";
 
-		Roomba cleaner = new Roomba();
+		Roomba cleaner = new Roomba(); 
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
 		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
 
@@ -28,6 +29,7 @@ public class Roomba implements Directions {
 
 		World.readWorld(worldName);
 		World.setVisible(true);
+		roomba.move();
 
 
 		/** This section will have all the logic that takes the Robot to every location
