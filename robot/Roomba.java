@@ -4,12 +4,12 @@ import kareltherobot.*;
 
 public class Roomba implements Directions {
 
-      Robot rob = new Robot(10,10,South,0);
+    
 	// Main method to make this self-contained
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
 		String worldName = "robot/basicRoom.wld";
-
+        World.setDelay(5);
 		Roomba cleaner = new Roomba(); 
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
 		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
@@ -23,17 +23,139 @@ public class Roomba implements Directions {
 
 
 	public int cleanRoom(String worldName, int startX, int startY) {
+		
+		Robot rob = new Robot(10,10,South,0);
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
         // Make sure it starts at startX and startY location.
-
+		
+ 
 		World.readWorld(worldName);
 		World.setVisible(true);
-		roomba.move();
 
-        while(roomba.nextToABeeper()) {
-			roomba.pickBeeper();
+
+
+		rob.move();
+		rob.move();
+		rob.move();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+		
+		
+        while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
 		}
+
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.move();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+		rob.move();
+		rob.move();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+		rob.move();
+		rob.turnLeft();
+		rob.move();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.move();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.turnLeft();
+		rob.move();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+		rob.move();
+		rob.move();
+		rob.move();
+
+		while(rob.nextToABeeper()){
+
+			rob.pickBeeper();
+		}
+
+
+
+
+
+
+		
+
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+	
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
 		 * large, complex task into smaller, easier to solve problems.
