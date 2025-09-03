@@ -4,7 +4,7 @@ import kareltherobot.*;
 
 public class Roomba implements Directions {
 
-      Robot rob = new Robot(10,10,South,900);
+      Robot rob = new Robot(10,10,South,0);
 	// Main method to make this self-contained
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
@@ -31,7 +31,9 @@ public class Roomba implements Directions {
 		World.setVisible(true);
 		roomba.move();
 
-
+        while(roomba.nextToABeeper()) {
+			roomba.pickBeeper();
+		}
 		/** This section will have all the logic that takes the Robot to every location
 		 * and cleans up all piles of beepers. Think about ways you can break this
 		 * large, complex task into smaller, easier to solve problems.
