@@ -24,7 +24,7 @@ public class Roomba implements Directions {
 
 	public int cleanRoom(String worldName, int startX, int startY) {
 		
-		Robot rob = new Robot(10,10,South,0);
+		Robot rob = new Robot(7,6,East,0);
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
         // Make sure it starts at startX and startY location.
@@ -132,13 +132,41 @@ public class Roomba implements Directions {
 		rob.move();
 
 */
-  
-
-      boolean x = true;
-	  while (x == true) {
-		if (rob.nextToABeeper()) {
-			
+    
+     int drac = 0;
+     boolean x = true;
+	while (x == true) {
+		while (rob.nextToABeeper() == true) {
+			rob.pickBeeper();
 		}
+		rob.move();
+		if (rob.frontIsClear() == false ) {
+            if (drac % 2 == 0) {
+             	drac += 1;
+				rob.turnLeft();
+				rob.move();
+				rob.turnLeft();
+			}
+			else {
+				drac += 1;
+				rob.turnLeft();
+				rob.turnLeft();
+				rob.turnLeft();
+				rob.move();
+				rob.turnLeft();
+				rob.turnLeft();
+				rob.turnLeft();
+
+			
+
+		  }
+
+		}
+
+		
+
+			
+		
 	  }
 
        
