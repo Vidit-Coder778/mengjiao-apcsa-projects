@@ -9,7 +9,7 @@ public class Roomba implements Directions {
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
 		String worldName = "robot/TestWorld-1.wld";
-        World.setDelay(5);
+        World.setDelay(1);
 		Roomba cleaner = new Roomba(); 
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
 		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
@@ -24,7 +24,7 @@ public class Roomba implements Directions {
 
 	public int cleanRoom(String worldName, int startX, int startY) {
 		
-		Robot rob = new Robot(7,6,East,0);
+		Robot rob = new Robot(25,12,East,0);
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
         // Make sure it starts at startX and startY location.
@@ -130,7 +130,7 @@ public class Roomba implements Directions {
 		rob.move();
 		rob.move();
 		rob.move();
-
+		
 */
     
      int drac = 0;
