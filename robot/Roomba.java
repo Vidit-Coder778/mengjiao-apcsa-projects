@@ -8,7 +8,7 @@ public class Roomba implements Directions {
 	// Main method to make this self-contained
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
-		String worldName = "robot/basicRoom.wld";
+		String worldName = "robot/TestWorld-1.wld";
         World.setDelay(5);
 		Roomba cleaner = new Roomba(); 
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
@@ -169,8 +169,8 @@ public class Roomba implements Directions {
 		
 	  }
 
-       
-
+     
+    
 
 
 
