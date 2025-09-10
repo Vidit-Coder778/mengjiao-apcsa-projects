@@ -132,27 +132,36 @@ public class Roomba implements Directions {
 		rob.move();
 		
 */
-    
-     int drac = 0;
+     int TotalBeepers = 0;
+     int count = 0;
+	 int area = 0;
      boolean x = true;
 	while (x == true) {
 		while (rob.nextToABeeper() == true) {
 			rob.pickBeeper();
+			TotalBeepers++;
+			
 		}
 		rob.move();
+		area ++;
 		if (rob.frontIsClear() == false ) {
-            if (drac % 2 == 0) {
-             	drac += 1;
+            if (count % 2 == 0) {
+             	count += 1;
 				rob.turnLeft();
+				if (rob.frontIsClear() == false) {
+					break;
+				}
 				rob.move();
+				area ++;
 				rob.turnLeft();
 			}
 			else {
-				drac += 1;
+				count += 1;
 				rob.turnLeft();
 				rob.turnLeft();
 				rob.turnLeft();
 				rob.move();
+				area++;
 				rob.turnLeft();
 				rob.turnLeft();
 				rob.turnLeft();
@@ -168,8 +177,10 @@ public class Roomba implements Directions {
 			
 		
 	  }
-
-     
+    
+     System.out.println("The total area is" + ' ' + area);
+	 System.out.println("There are" + " " + TotalBeepers + " " + "beepers");
+	 
     
 
 
