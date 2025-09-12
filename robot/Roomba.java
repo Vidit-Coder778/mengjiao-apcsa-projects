@@ -136,10 +136,23 @@ public class Roomba implements Directions {
      int count = 0;
 	 int area = 0;
      boolean x = true;
+	 int currentpile = 0;
+	 int amountpiles = 0;
+     int largestpile = 0;
 	while (x == true) {
+		if (rob.nextToABeeper() == true) {
+            currentpile = 0;
+		}
 		while (rob.nextToABeeper() == true) {
+		    
 			rob.pickBeeper();
 			TotalBeepers++;
+			currentpile ++;
+			if (currentpile > largestpile) {
+				largestpile = currentpile;
+			} 
+
+
 			
 		}
 		rob.move();
@@ -180,6 +193,7 @@ public class Roomba implements Directions {
     
      System.out.println("The total area is" + ' ' + area);
 	 System.out.println("There are" + " " + TotalBeepers + " " + "beepers");
+	 System.out.print("The largest pile is" + " " + largestpile + " " + "beepers");
 	 
     
 
