@@ -197,8 +197,8 @@ public class Roomba implements Directions {
 	 System.out.println("There are" + " " + TotalBeepers + " " + "beepers");
 	 System.out.println("The largest pile is" + " " + largestpile + " " + "beepers");
      System.out.println("There are" +" " + totalpile + " " + "piles");
-	 System.out.println("The average amount of beepers per pile was" + " " + double((TotalBeepers/totalpile)) + " " + "beepers" );
-	 //System.out.println("The dirty percentage was" + "%")
+	 System.out.println("The average amount of beepers per pile was" + " " + (double)TotalBeepers/totalpile + " " + "beepers" );
+	 System.out.println("The dirty percentage was" + " " + (double)totalpile/area + "%");
     
 
 
