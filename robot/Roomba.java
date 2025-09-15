@@ -65,19 +65,13 @@ public class Roomba implements Directions {
                 street2 =rob.street();
 				
 			} 
-
-
-			
 		}
 		//ensures it keeps moving
 		rob.move();
 		area ++;
 		//determines which way its going to move
 		if (rob.frontIsClear() == false ) {
-			while (rob.nextToABeeper() == true) {
-				rob.pickBeeper();
-				TotalBeepers++;
-			}
+
             if (count % 2 == 0) {
              	count += 1;
 				rob.turnLeft();
