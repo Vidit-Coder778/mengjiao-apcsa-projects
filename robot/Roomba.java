@@ -9,7 +9,7 @@ public class Roomba implements Directions {
 	public static void main(String[] args) {
 		// LEAVE THIS ALONE!!!!!!
 		String worldName = "robot/finalTestWorld2024 (1).wld";
-        World.setDelay(1);
+        World.setDelay(0);
 		Roomba cleaner = new Roomba(); 
 		int totalBeepers = cleaner.cleanRoom(worldName, 7, 6);
 		System.out.println("Roomba cleaned up a total of " + totalBeepers + " beepers.");
@@ -137,7 +137,7 @@ public class Roomba implements Directions {
 	 int area = 0;
      boolean x = true;
 	 int currentpile = 0;
-	 int totalpile = 0;
+	 int totalpile = 1;
      int largestpile = 0;
 	while (x == true) {
 		if (rob.nextToABeeper() == true) {
@@ -152,6 +152,7 @@ public class Roomba implements Directions {
 			currentpile ++;
 			if (currentpile > largestpile) {
 				largestpile = currentpile;
+				
 			} 
 
 
@@ -175,6 +176,9 @@ public class Roomba implements Directions {
 				rob.turnLeft();
 				rob.turnLeft();
 				rob.turnLeft();
+				if (rob.frontIsClear() == false) {
+					break;
+				}
 				rob.move();
 				area++;
 				rob.turnLeft();
@@ -193,13 +197,13 @@ public class Roomba implements Directions {
 		
 	  }
     
-     System.out.println("The total area is" + ' ' + area);
+     System.out.println("The total area is" + ' ' + area + " " + "square units");
 	 System.out.println("There are" + " " + TotalBeepers + " " + "beepers");
 	 System.out.println("The largest pile is" + " " + largestpile + " " + "beepers");
      System.out.println("There are" +" " + totalpile + " " + "piles");
 	 System.out.println("The average amount of beepers per pile was" + " " + (double)TotalBeepers/totalpile + " " + "beepers" );
 	 System.out.println("The dirty percentage was" + " " + (double)totalpile/area + "%");
-    
+     
 
 
 
