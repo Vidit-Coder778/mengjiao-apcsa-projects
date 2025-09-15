@@ -34,104 +34,7 @@ public class Roomba implements Directions {
 		World.setVisible(true);
 		
 
-/* 
-
-		rob.move();
-		rob.move();
-		rob.move();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-		
-		
-        while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.move();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-		rob.move();
-		rob.move();
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-		rob.move();
-		rob.turnLeft();
-		rob.move();
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.move();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.turnLeft();
-		rob.move();
-		rob.move();
-
-		while(rob.nextToABeeper()){
-
-			rob.pickBeeper();
-		}
-
-		rob.move();
-		rob.move();
-		rob.move();
-		
-*/
+    // all my variables
      int TotalBeepers = 0;
      int count = 0;
 	 int area = 0;
@@ -139,27 +42,35 @@ public class Roomba implements Directions {
 	 int currentpile = 0;
 	 int totalpile = 1;
      int largestpile = 0;
+	int avenue2 =rob.avenue();
+    int street2 =rob.street();
 	while (x == true) {
+		//start of while loop
 		if (rob.nextToABeeper() == true) {
             currentpile = 0;
 			totalpile ++;
 			
 		}
+		
 		while (rob.nextToABeeper() == true) {
-		    
+		    // amount of beepers increases and finding the largest pile
 			rob.pickBeeper();
 			TotalBeepers++;
 			currentpile ++;
 			if (currentpile > largestpile) {
 				largestpile = currentpile;
+				avenue2 =rob.avenue();
+                street2 =rob.street();
 				
 			} 
 
 
 			
 		}
+		//ensures it keeps moving
 		rob.move();
 		area ++;
+		//determines which way its going to move
 		if (rob.frontIsClear() == false ) {
             if (count % 2 == 0) {
              	count += 1;
@@ -203,7 +114,7 @@ public class Roomba implements Directions {
      System.out.println("There are" +" " + totalpile + " " + "piles");
 	 System.out.println("The average amount of beepers per pile was" + " " + (double)TotalBeepers/totalpile + " " + "beepers" );
 	 System.out.println("The dirty percentage was" + " " + (double)totalpile/area + "%");
-     
+      System.out.println("The largest pile (from top left corner) is right " + avenue2 + " and down " + street2 + ".");
 
 
 
