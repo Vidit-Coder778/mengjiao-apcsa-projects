@@ -24,7 +24,9 @@ public class Roomba implements Directions {
 
 	public int cleanRoom(String worldName, int startX, int startY) {
 		
-		Robot rob = new Robot(26,101,East,0);
+		roomba = new Robot(26, 101, East, 0);
+        Robot rob = roomba;
+		//Robot rob = new Robot(26,101,East,0);
 
 		// A new Robot should be constructed and assigned to the global (instance) variable named roomba that is declared above.
         // Make sure it starts at startX and startY location.
@@ -37,10 +39,10 @@ public class Roomba implements Directions {
     // all my variables
      int TotalBeepers = 0;
      int count = 0;
-	 int area = 0;
+	 int area = 1;
      boolean x = true;
 	 int currentpile = 0;
-	 int totalpile = 1;
+	 int totalpile = 0;
      int largestpile = 0;
 	int avenue2 =rob.avenue();
     int street2 =rob.street();
@@ -72,6 +74,10 @@ public class Roomba implements Directions {
 		area ++;
 		//determines which way its going to move
 		if (rob.frontIsClear() == false ) {
+			while (rob.nextToABeeper() == true) {
+				rob.pickBeeper();
+				TotalBeepers++;
+			}
             if (count % 2 == 0) {
              	count += 1;
 				rob.turnLeft();
