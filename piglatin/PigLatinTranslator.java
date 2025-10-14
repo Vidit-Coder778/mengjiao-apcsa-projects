@@ -30,11 +30,18 @@ public class PigLatinTranslator {
         System.out.println("  -> translateWord('" + input + "')");
 
         String result = "";
+        String first = input.substring(0,1);
+        if (first.equalsIgnoreCase("a")|| first.equalsIgnoreCase("e") || first.equalsIgnoreCase("i") || first.equalsIgnoreCase("o") || first.equalsIgnoreCase("u") || first.equalsIgnoreCase("y"))
+        {
+            return input + "ay";
+        }
+        else {
+           
+        }
 
-        // TODO: Replace this code to correctly translate a single word.
-        // Start here first!
-        // This is the first place to work.
+
         
+         //result = input; // Delete this line
 
         return result;
     }
