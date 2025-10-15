@@ -54,14 +54,14 @@ public class PigLatinTranslator {
     
     result = input.substring(i) + consonants.toLowerCase() + "ay";
     }
-
+    return result; 
 }
 
 
         
         
 
-        return result;
+   
 }
 
     // Add additonal private methods here.
