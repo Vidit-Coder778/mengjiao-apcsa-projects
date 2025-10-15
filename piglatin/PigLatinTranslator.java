@@ -33,21 +33,39 @@ public class PigLatinTranslator {
         String first = input.substring(0,1);
         if (first.equalsIgnoreCase("a")|| first.equalsIgnoreCase("e") || first.equalsIgnoreCase("i") || first.equalsIgnoreCase("o") || first.equalsIgnoreCase("u") || first.equalsIgnoreCase("y"))
         {
-            return input + "ay";
+            result = input + "ay";
         }
         else {
-           
+    String consonants = "";
+    int i = 0;
+    
+    while (i < input.length()) {
+        String letter = input.substring(i, i+1);
+        
+        if (letter.equalsIgnoreCase("a") || letter.equalsIgnoreCase("e") || 
+            letter.equalsIgnoreCase("i") || letter.equalsIgnoreCase("o") || 
+            letter.equalsIgnoreCase("u") || letter.equalsIgnoreCase("y")) {
+            break;
         }
+        
+        consonants = consonants + letter;
+        i++;
+    }
+    
+    result = input.substring(i) + consonants.toLowerCase() + "ay";
+    }
+
+}
 
 
         
-         //result = input; // Delete this line
+        
 
         return result;
-    }
+}
 
     // Add additonal private methods here.
     // For example, I had one like this:
     // private static String capitalizeFirstLetter(String input)
 
-}
+
