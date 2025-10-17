@@ -13,18 +13,18 @@ public class PigLatinTranslator {
     }
 
     public static String translate(String input) {
-        System.out.println("  -> translate('" + input + "')");
-
-        String result = "";
-
-        // TODO: translate a string input, store in result.
-        // The input to this function could be any English string.
-        // It may be made up of many words.
-        // This method must call translateWord once for each word in the string.
-        result = translateWord(input);
-
-        return result;
+    String result = "";
+    String[] words = input.split(" ");
+    
+    for (int i = 0; i < words.length; i++) {
+        result += translateWord(words[i]);
+        if (i < words.length - 1) {
+           result += " ";
+        }
     }
+    
+    return result;
+}
 
    
 private static String translateWord(String input) {
