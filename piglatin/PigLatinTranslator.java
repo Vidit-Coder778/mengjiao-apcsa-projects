@@ -66,18 +66,20 @@ private static String translateWord(String input) {
     } else if (firstCap) {
         result = result.substring(0, 1).toUpperCase() + result.substring(1).toLowerCase();
     }
+    
 
     return result; 
 }
 
+   
+    
+}
         
         
 
    
-}
 
-    // Add additonal private methods here.
-    // For example, I had one like this:
-    // private static String capitalizeFirstLetter(String input)
+
+    
 
 
