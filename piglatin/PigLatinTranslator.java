@@ -26,53 +26,130 @@ public class PigLatinTranslator {
     return result;
 }
 
-   
+
+
+/*private static String translateWord(String input) {
+    System.out.println("  -> translateWord('" + input + "')");
+
+    // Extract trailing symbols
+    int lastLetterIndex = input.length();
+    for (int i = input.length() - 1; i >= 0; i--) {
+        if (Character.isLetter(input.charAt(i))) {
+            lastLetterIndex = i + 1;
+            break;
+        }
+    }
+    String wordOnly = input.substring(0, lastLetterIndex);
+    String symbols = input.substring(lastLetterIndex);
+
+    // Check capitalization patterns
+    boolean allCaps = wordOnly.equals(wordOnly.toUpperCase());
+    boolean hasAnyCaps = !wordOnly.equals(wordOnly.toLowerCase());
+
+    // Find first vowel position
+    int firstVowelPos = 0;
+    for (int i = 0; i < wordOnly.length(); i++) {
+        char c = Character.toLowerCase(wordOnly.charAt(i));
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
+            firstVowelPos = i;
+            break;
+        }
+    }
+
+    // Build result
+    String result;
+    if (firstVowelPos == 0) {
+        // Starts with vowel
+        result = wordOnly + "ay";
+    } else {
+        // Move consonants to end
+        String remaining = wordOnly.substring(firstVowelPos);
+        String consonants = wordOnly.substring(0, firstVowelPos);
+        
+        // Capitalize first letter if original had any caps (and not all caps)
+        if (hasAnyCaps && !allCaps) {
+            remaining = Character.toUpperCase(remaining.charAt(0)) + remaining.substring(1);
+        }
+        
+        // Lowercase moved consonants (unless all caps)
+        if (!allCaps) {
+            consonants = consonants.toLowerCase();
+        }
+        
+        result = remaining + consonants + "ay";
+    }
+
+    // Apply all-caps formatting
+    if (allCaps) {
+        result = result.substring(0, result.length() - 2).toUpperCase() + "ay";
+    }
+
+    return result + symbols;
+}   
+*/
 private static String translateWord(String input) {
     System.out.println("  -> translateWord('" + input + "')");
 
-    String result = "";
-    String first = input.substring(0, 1);
+    // Check if input is only whitespace
+    if (input.trim().isEmpty()) {
+        return "";
+    }
 
-    boolean firstCap = Character.isUpperCase(input.charAt(0));
-    boolean allCaps = input.equals(input.toUpperCase());
+    // Extract trailing symbols
+    int lastLetterIndex = input.length();
+    for (int i = input.length() - 1; i >= 0; i--) {
+        if (Character.isLetter(input.charAt(i))) {
+            lastLetterIndex = i + 1;
+            break;
+        }
+    }
+    String wordOnly = input.substring(0, lastLetterIndex);
+    String symbols = input.substring(lastLetterIndex);
 
-    if (first.equalsIgnoreCase("a") || first.equalsIgnoreCase("e") || 
-        first.equalsIgnoreCase("i") || first.equalsIgnoreCase("o") || 
-        first.equalsIgnoreCase("u") || first.equalsIgnoreCase("y")) {
-        result = input + "ay";
+    // Check capitalization patterns
+    boolean allCaps = wordOnly.equals(wordOnly.toUpperCase());
+    boolean hasAnyCaps = !wordOnly.equals(wordOnly.toLowerCase());
+
+    // Find first vowel position
+    int firstVowelPos = 0;
+    for (int i = 0; i < wordOnly.length(); i++) {
+        char c = Character.toLowerCase(wordOnly.charAt(i));
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'y') {
+            firstVowelPos = i;
+            break;
+        }
+    }
+
+    // Build result
+    String result;
+    if (firstVowelPos == 0) {
+        // Starts with vowel
+        result = wordOnly + "ay";
     } else {
-        String consonants = "";
-        int i = 0;
+        // Move consonants to end
+        String remaining = wordOnly.substring(firstVowelPos);
+        String consonants = wordOnly.substring(0, firstVowelPos);
         
-        while (i < input.length()) {
-            String letter = input.substring(i, i + 1);
-            
-            if (letter.equalsIgnoreCase("a") || letter.equalsIgnoreCase("e") || 
-                letter.equalsIgnoreCase("i") || letter.equalsIgnoreCase("o") || 
-                letter.equalsIgnoreCase("u") || letter.equalsIgnoreCase("y")) {
-                break;
-            }
-            
-            consonants = consonants + letter;
-            i++;
+        // Capitalize first letter if original had any caps (and not all caps)
+        if (hasAnyCaps && !allCaps) {
+            remaining = Character.toUpperCase(remaining.charAt(0)) + remaining.substring(1);
         }
         
-        result = input.substring(i) + consonants.toLowerCase() + "ay";
+        // Lowercase moved consonants (unless all caps)
+        if (!allCaps) {
+            consonants = consonants.toLowerCase();
+        }
+        
+        result = remaining + consonants + "ay";
     }
-    
-    // Apply capitalization rules
+
+    // Apply all-caps formatting
     if (allCaps) {
         result = result.substring(0, result.length() - 2).toUpperCase() + "ay";
-    } else if (firstCap) {
-        result = result.substring(0, 1).toUpperCase() + result.substring(1).toLowerCase();
     }
-    
 
-    return result; 
-}
-
-   
-    
+    return result + symbols;
+}    
 }
         
         
