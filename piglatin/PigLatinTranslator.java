@@ -3,24 +3,13 @@ package piglatin;
 public class PigLatinTranslator {
     public static Book translate(Book input) {
         Book translatedBook = new Book();
-        translatedBook.setTitle(translate(input.getTitle()));
-        translatedBook.setAuthor(translate(input.getAuthor()));
+         translatedBook.setTitle(translate(input.getTitle()));
         
-        for (int i = 0; i < input.getChapterCount(); i++) {
-            Chapter originalChapter = input.getChapter(i);
-            Chapter translatedChapter = new Chapter();
-            translatedChapter.setTitle(translate(originalChapter.getTitle()));
-            
-            for (int j = 0; j < originalChapter.getParagraphCount(); j++) {
-                translatedChapter.addParagraph(translate(originalChapter.getParagraph(j)));
-            }
-            
-            translatedBook.addChapter(translatedChapter);
+        for (int i = 0; i < input.getLineCount(); i++) {
+            translatedBook.appendLine(translate(input.getLine(i)));
         }
-        // TODO: Add code here to populate translatedBook with a translation of the
-        // input book.
-        // Curent do-nothing code will return an empty book.
-        // Your code will need to call translate(String input) many times.
+        
+
 
         return translatedBook;
     }
