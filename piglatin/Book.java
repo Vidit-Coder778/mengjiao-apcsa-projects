@@ -60,8 +60,9 @@ public class Book {
 
 
     public void readFromUrl(String title, String url) {
-        // load a book from a URL.
-        // https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
+
+        title.readFromUrl("Romeo and Juliette", "https://gutenberg.pglaf.org/cache/epub/1513/pg1513.txt");
+        
         this.title = title;
 
         try {
@@ -87,4 +88,7 @@ public class Book {
             ex.printStackTrace();
         }
     }
+
+    
 }
+
