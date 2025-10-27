@@ -38,7 +38,7 @@ private static String translateWord(String input) {
         return "";
     }
 
-    // Extract trailing symbols
+    // Remove trailing symbols
     int lastLetterIndex = input.length();
     for (int i = input.length() - 1; i >= 0; i--) {
         if (Character.isLetter(input.charAt(i))) {
@@ -63,7 +63,7 @@ private static String translateWord(String input) {
         }
     }
 
-    // Build result
+    
     String result;
     if (firstVowelPos == 0) {
         // Starts with vowel
