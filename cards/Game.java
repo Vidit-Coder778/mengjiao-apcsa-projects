@@ -93,7 +93,7 @@ public class Game {
             }
             if (playerScore > 21)
             {
-                System.out.println("BUST! You loose.");
+                System.out.println("BUST! You lose.");
                 dealersWins++;
                 printState();
                 return false;
@@ -133,7 +133,7 @@ public class Game {
                 }
                 else {
                     dealersWins++;
-                    System.out.println("Player wins!");
+                    System.out.println("Dealer wins!");
                 }
                 printState();
                 return false;
