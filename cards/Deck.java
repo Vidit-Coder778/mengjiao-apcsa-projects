@@ -19,7 +19,7 @@ public class Deck {
 
     public void shuffle() {
         for (int i = 0; i < 52;i++) {
-            int random = (int)(Math.random * 52);
+            int random = (int)(Math.random() * 52);
             Card temp = cards[i];
             cards[i] = cards[random];
             cards[random] = temp;
