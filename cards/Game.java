@@ -16,10 +16,18 @@ public class Game {
         dealersWins = 0;
     }
 
+
+
     public void printRules()
     {
         System.out.println(" --- Rules / How to play --- ");
         System.out.println("s to stand, h to hit");
+    }
+
+    public void printStats()
+    {
+        System.out.println("Player Wins: " + playersWins);
+        System.out.println("Dealer Wins: " + dealersWins);
     }
 
     private void printState()
@@ -140,18 +148,30 @@ public class Game {
     private int score(Hand hand)
     {
         int score = 0;
+        int aces = 0;
         for (int i=0; i<hand.length(); i++)
         {
             Card card = hand.get(i);
             int value = card.getValue() + 1;
-            if (value > 10)
-            {
-                value = 10;
+
+            if (value == 1) {
+                aces++;
+                score += 11;
             }
-            // TODO: deal with aces
-            score += value;
+             else if (value > 10)
+            {
+                score += 10;
+            }
+            else {
+                score += value;
+            }
+            
         }
-        return score;
+        while (score > 21 && aces > 0) {
+            score -= 10;
+            aces--;
+        }
+     return score;
     }
 
 }
