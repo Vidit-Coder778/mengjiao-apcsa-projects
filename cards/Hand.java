@@ -31,6 +31,13 @@ public class Hand {
         }
         Card removed = cards[index];
 
-        for (int i = index;)
+        for (int i = index; i < length-1;i++) {
+            cards[i] = cards[i+1];
+        }
+        length--;
+        return removed;
     }
+
+    
+
 }
