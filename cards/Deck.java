@@ -1,9 +1,9 @@
 package cards;
 
 public class Deck {
-    private Card[] cards;
-    private int top;
-
+    private Card[] cards; // Array for all 52 cards
+    private int top;// the index of the current top card
+    // Creates a full deck of 52 cards
     public Deck() {
         cards = new Card[52];
         top = 0;
@@ -16,8 +16,9 @@ public class Deck {
             }
         }
     }
-
+    //Randomizes the deck
     public void shuffle() {
+        // Swap each card with a random card
         for (int i = 0; i < 52;i++) {
             int random = (int)(Math.random() * 52);
             Card temp = cards[i];
@@ -26,7 +27,7 @@ public class Deck {
         }
         top = 0;
     }
-
+    // Move cards from top to end
     public void cut(int index) {
         if (index < 0) {
             index = 0;
@@ -45,15 +46,16 @@ public class Deck {
         cards = temp;
         top = 0;
     }
-
+    // Returns top card or null if empty
     public Card draw() {
         if (top >= 52) {
             return null;
         }
         return cards[top++];
     }
-
+    // Prints cards from top to index
     public void print(int index) {
+        // Shorten the index into a valid range
         if (index < 0) {
             index = 0;
         }
