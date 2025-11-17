@@ -27,5 +27,44 @@ public class Deck {
         top = 0;
     }
 
+    public void cut(int index) {
+        if (index < 0) {
+            index = 0;
+        }
+        if (index > 51) {
+            index = 51;
+        }
+        Card[] temp = new Card[52];
+        int pos = 0;
+        for (int i = index; i < 52; i++ ) {
+            temp[pos++] = cards[i];
+        }
+        for (int i = 0; i < index; i++) {
+            temp[pos++] = cards[i];
+        }
+        cards = temp;
+        top = 0;
+    }
+
+    public Card draw() {
+        if (top >= 52) {
+            return null;
+        }
+        return cards[top++];
+    }
+
+    public void print(int index) {
+        if (index < 0) {
+            index = 0;
+        }
+        if (index > 51) {
+            index = 51;
+        }
+        for (int i = top; i <= index && i < 52; i++) {
+            System.out.print(cards[i]);
+            if 
+        }
+    }
+
 
 }
