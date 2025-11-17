@@ -1,12 +1,12 @@
 package cards;
 
 public class Card {
-
+    // Instance variables
     private int suit;
     private int value;
 
     public Card(int suit, int value) {
-
+        // Limits the suit's range
         if (suit < 0) {
             this.suit = 0;
         } else if (suit > 3) {
@@ -14,7 +14,7 @@ public class Card {
         } else {
             this.suit = suit;
         }
-
+        // Limits value's range
          if (value < 0) {
             this.value = 0;
         } else if (value > 12) {
@@ -25,13 +25,14 @@ public class Card {
 
         
     }
-
+    // returns current value of the card
     public int getValue() {
         return value;
     }
-
+    // retuns string with suit symbol and value character
     public String toString() {
 
+        // Get suit symbol
         String suitSymbol = "";
             if (suit == 0) {
                 suitSymbol = "♦";
@@ -45,7 +46,7 @@ public class Card {
             else {
                 suitSymbol = "♠";
             }
-        
+        // Get value character
         String valueChar = "";
         if (value == 0) {
             valueChar = "A";
@@ -54,7 +55,7 @@ public class Card {
             valueChar = String.valueOf(value+1);
         }
         else if (value == 10) {
-            valueChar = 10;
+            valueChar = "J";
         }
         else if (value == 11) {
             valueChar = "Q";
