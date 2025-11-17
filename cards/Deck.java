@@ -62,8 +62,11 @@ public class Deck {
         }
         for (int i = top; i <= index && i < 52; i++) {
             System.out.print(cards[i]);
-            if 
+            if (i < index && i < 51) {
+                System.out.print(" ");
+            } 
         }
+        System.out.println();
     }
 
 
