@@ -4,7 +4,7 @@ public class Hand {
 
     private Card[] cards;
     private int length;
-    // Constructor takes max number of cards3
+    // Constructor takes max number of cards
     public Hand(int maxCards) {
         cards = new Card[maxCards];
         length = 0;
