@@ -32,7 +32,7 @@ public class Hand {
             return null;
         }
         Card removed = cards[index];
-        // shift cards left to fill gap
+        
         for (int i = index; i < length-1;i++) {
             cards[i] = cards[i+1];
         }
