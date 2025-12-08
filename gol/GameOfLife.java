@@ -35,7 +35,7 @@ public class GameOfLife implements Board {
        int[][] newBoard = new int[board.length][board[0].length];
        for (int x = 0; x < board.length;x++){
             for (int y = 0; y < board[0].length;y++) {
-                int n = countNeighbors(x,y);
+                int n = countNeighbors(x, y);
                 if (n == 3 || (n == 2 && board[x][y] == 1)) {
                     newBoard[x][y] = 1;
                 }
