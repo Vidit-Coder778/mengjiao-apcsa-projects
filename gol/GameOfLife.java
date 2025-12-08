@@ -9,28 +9,39 @@ public class GameOfLife implements Board {
 
     public GameOfLife(int x, int y)
     {
-        // Construct a 2d array of the given x and y size.
+       board = new int[x][y];
     }
 
     // Set values on the board
     public void set(int x, int y, int[][] data) {
         for (int i = 0; i < data.length; i++) {
             for (int j = 0; j < data[0].length; j++) {
-                board[i + x][j + y] = data[i][j];
+                board[x + i][y + j] = data[i][j];
             }
         }
     }
 
     // Run the simulation for a number of turns
     public void run(int turns) {
-        // call step the number of times requested
+        for (int i = 0; i < turns; i++) {
+            step();
+        }
     }
 
     // Step the simulation forward one turn.
     public void step()
     {
         print();
-        // Update the game board, store a 1 if the cell is alive and a 0 otherwise.
+       int[][] newBoard = new int[board.length][board[0].length];
+       for (int x = 0; x < board.length;x++){
+            for (int y = 0; y < board[0].length;y++) {
+                int n = countNeighbors(x,y);
+                if (n == 3 || (n == 2 && board[x][y] == 1)) {
+                    newBoard[x][y] = 1;
+                }
+            }
+        }
+        board = newBoard;
     }
 
 
