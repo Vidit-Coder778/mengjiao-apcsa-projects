@@ -1,6 +1,6 @@
 package gol;
 
-import java.util.Arrays;
+//import java.util.Arrays;
 
 public class TestSuite {
     public static void run()
