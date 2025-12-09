@@ -3,7 +3,7 @@ package gol;
 interface Board {
 
     // Run the simulation for a given number of turns
-    public void run(int turns);
+    public void run(int terms);
 
     // Step the simulation forward one turn
     public void step();
