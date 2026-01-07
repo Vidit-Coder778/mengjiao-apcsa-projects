@@ -14,7 +14,13 @@ public class Main {
             sum = sum + i;
         }
 
-        
+        for (int i = 15; i < 1000; i = i + 15) {
+            sum = sum - i;
+        }
+
+        System.out.println("The sum of all multiples of 3 and 5 under 1000 is: " + sum)
+
+
 
 
 
