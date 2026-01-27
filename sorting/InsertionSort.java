@@ -11,7 +11,9 @@ public class InsertionSort implements Sorter {
 
             while (j >= 0 && input[j] > key) {
                 input[j+1] = input[j];
+                j = j - 1;
             }
+            input[j+1] = key;
         }
     }
 }
