@@ -24,7 +24,13 @@ public class IrregularPolygon {
         if (n < 2) {
             return 0.0;
         }
-        return 3.14;
+        for (int i = 0; i < n; i++) {
+           Point2D.Double current = myPolygon.get(i);
+            Point2D.Double next = myPolygon.get((i + 1) % n);
+            perimeter += current.distance(next); 
+        }
+        
+        return perimeter;
     }
 
     public double area() {
