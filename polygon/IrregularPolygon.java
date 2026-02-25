@@ -13,6 +13,7 @@ public class IrregularPolygon {
     // public methods
     public void add(Point2D.Double aPoint)
     {
+        myPolygon.add(aPoint);
         // TODO: Add a point to the IrregularPolygon.
         
     }
