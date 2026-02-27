@@ -43,7 +43,11 @@ public class IrregularPolygon {
         }
         for (int i = 0; i < n; i++) {
             Point2D.Double current = myPolygon.get(i);
+             Point2D.Double next = myPolygon.get((i+1) % n);
+             area += (current.x * next.y) - (next.x - current.y);
         }
+        
+
     }
 
     public void draw()
