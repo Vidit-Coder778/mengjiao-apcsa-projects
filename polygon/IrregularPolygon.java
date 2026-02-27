@@ -46,7 +46,7 @@ public class IrregularPolygon {
              Point2D.Double next = myPolygon.get((i+1) % n);
              area += (current.x * next.y) - (next.x - current.y);
         }
-        
+        return Math.abs(area) / 2.0;
 
     }
 
@@ -56,8 +56,9 @@ public class IrregularPolygon {
         try {
             // TODO: Draw the polygon.
             // Documents: https://pavao.org/compsci/gpdraw/html/gpdraw/DrawingTool.html
-            //DrawingTool myDrawingTool = new DrawingTool(new SketchPad(500, 500));
+            DrawingTool myDrawingTool = new DrawingTool(new SketchPad(500, 500));
             //myDrawingTool.move(50, 50);
+            
         } catch (java.awt.HeadlessException e) {
             System.out.println("Exception: No graphics support available.");
         }
