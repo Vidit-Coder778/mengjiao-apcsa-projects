@@ -61,10 +61,10 @@ public class IrregularPolygon {
             if (n < 2) {
                 return;
             }
-            POint2D.Double first = myPolygon.get(0);
+            Point2D.Double first = myPolygon.get(0);
             myDrawingTool.up();
             myDrawingTool.move(first.x,first.y);
-            myDrawingTooll.down();
+            myDrawingTool.down();
             for (int i = 1; i < n; i++) {
                 Point2D.Double pt = myPolygon.get(i);
                 myDrawingTool.move(pt.x,pt.y);
