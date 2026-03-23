@@ -54,7 +54,7 @@ public class TowerModel {
         int top = towers[destination].peek();
 
         if (disk != 0 && (top == 0 || top > disk)) {
-            towers[destination].push(towers[source].pop())
+            towers[destination].push(towers[source].pop());
         }
     }
 
