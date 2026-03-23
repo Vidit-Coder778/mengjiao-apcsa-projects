@@ -51,6 +51,11 @@ public class TowerModel {
         System.out.println("Move #" + ++moveCounter + " from " + source + " to " + destination);
         
         int disk = towers[source].peek();
+        int top = towers[destination].peek();
+
+        if (disk != 0 && (top == 0 || top > disk)) {
+            towers[destination].push(towers[source].pop())
+        }
     }
 
     // Helper method to nicely print the current model state.
